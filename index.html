@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPP test</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/tobii.min.css">
+  <style>
+    .tobii-zoom__icon {display:none;}
+  </style>
+  <link rel="stylesheet" href="../css/justifiedGallery.min.css" />
+  <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="canvas" style="display:block; margin:0 auto; max-width:1600px;">
+        <!-- justified gallery of lightboxes -->
+        <p>Here are some images. <br /><em>Click to view larger version...</em></p>
+        <div id="jgallery" data-tmb-width="1200">
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222231_uswq3d.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222209_e54jvl.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222221_fw7hwq.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724349193/P8222312_pwqvd1.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343510/P8222235_nrvfs2.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343505/P8222277_dv0av7.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343505/P8222253_cyhpk7.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724349190/P8222313_mnpoyl.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343503/P8222251_mbugcu.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343467/P8222299_wjiyci.jpg" class="lightbox"
+                data-group="test">
+                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
+            </a>
+        </div>
+    </div>
+
+  <!-- JS -->
+  <script src="../js/tobii.min.js"></script>
+  <script src="../js/jquery.justifiedGallery.min.js"></script>
+  <script>
+    function defer(method) {
+       if (window.jQuery) {
+            method();
+        } else {
+            setTimeout(function() { defer(method) }, 50);
+        }
+    }   
+    defer(function () {
+        // apply Cloudinary resizing to generate lightbox thumbnails
+        var pppCldBase= "https://res.cloudinary.com/dpulivsul/image/upload/";
+        var pppCldBaseLen= pppCldBase.length;
+        $("#jgallery").each(function(){
+            var pppGalWidth= $(this).attr("data-tmb-width");
+            $(this).children('a.lightbox').each(function(){
+                var pppThisSrc= $(this).attr("href");
+                var pppThisTmbSrc= pppCldBase + "w_" + pppGalWidth + ",c_scale/" + pppThisSrc.substring(pppCldBaseLen);
+                $(this).children("img").attr("src", pppThisTmbSrc);
+            });
+        });
+        const tobii = new Tobii({captions: false});
+        $("#jgallery").justifiedGallery({rowHeight: 240,  margins: 6, captions: false, lastRow:'justify'});
+    });
+  </script>
+</body>
+</html>
