@@ -1,92 +1,170 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PPP test 240821</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PPP test 240821</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/tobii.min.css">
-  <style>
-    .tobii-zoom__icon {display:none;}
-  </style>
-  <link rel="stylesheet" href="css/justifiedGallery.min.css" />
-  <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tobii.min.css">
+    <link rel="stylesheet" href="css/justifiedGallery.min.css" />
+    <style>
+        .tobii-zoom__icon {
+            display: none;
+        }
+    </style>
+    <style>
+        #scrolly {
+            position: relative;
+        }
+
+        #scrolly article {
+            position: relative;
+            padding: 0 1rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        #scrolly .step {
+            margin: 2rem auto 4rem auto;
+            background-color: #3b3b3b;
+            color: #fff;
+        }
+
+        #scrolly .step.is-active {
+            background-color: goldenrod;
+            color: #3b3b3b;
+        }
+
+        #scrolly .step p {
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <div class="canvas" style="display:block; margin:0 auto; max-width:1600px;">
-        <!-- justified gallery of lightboxes -->
-        <p>Here are some images. <br /><em>Click to view larger version...</em></p>
-        <div id="jgallery" data-tmb-width="1200">
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222231_uswq3d.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222209_e54jvl.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343512/P8222221_fw7hwq.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724349193/P8222312_pwqvd1.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343510/P8222235_nrvfs2.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343505/P8222277_dv0av7.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343505/P8222253_cyhpk7.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724349190/P8222313_mnpoyl.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343503/P8222251_mbugcu.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-            <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724343467/P8222299_wjiyci.jpg" class="lightbox"
-                data-group="test">
-                <img alt="Title 1" src="../assets/images/loading.gif" loading="lazy" />
-            </a>
-        </div>
+    <div class="canvas" style="display:block; margin:0 auto; max-width:600px; text-align:center;">
+
+		<section id="intro">
+			<h1 class="intro__hed">Test version</h1>
+			<p class="intro__dek">
+				Start scrolling to see how it works.
+			</p>
+		</section>
+
+        <section id="scrolly">
+            <article>
+                <div class="step" data-step="1" style="padding: 410px 0px;" data-scrollama-index="0">
+                    <p>STEP 1</p>
+                </div>
+                <div class="step" data-step="2" style="padding: 269px 0px;" data-scrollama-index="1">
+                    <p>Gallery</p>
+                    <!-- justified gallery of lightboxes -->
+                    <p>Here are some images. <br /><em>Click to view larger version...</em></p>
+                    <div id="jgallery" data-tmb-width="300">
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410611/P8222277_grqbrx.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410611/P8222295_fczjtk.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410610/P8222300_ukjy3p.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410609/P8222332_nkqolg.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724349194/P8222334_em4elm.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410607/P8222299_lhutn9.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410605/P8222291_avpkwo.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410601/P8222253_x7auft.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410600/P8222235_unopd1.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                        <a href="https://res.cloudinary.com/dpulivsul/image/upload/v1724410596/P8222251_wwn6zd.jpg"
+                            class="lightbox" data-group="test">
+                            <img alt="Title 1" src="assets/images/loading.gif" loading="lazy" />
+                        </a>
+                    </div>
+				</div>
+				<div class="step" data-step="3" style="padding: 187px 0px;" data-scrollama-index="2">
+					<p>STEP 3</p>
+				</div>
+				<div class="step" data-step="4" style="padding: 411px 0px;" data-scrollama-index="3">
+					<p>STEP 4</p>
+				</div>
+			</article>
+		</section>
+
+        <section id="outro"></section>
     </div>
 
-  <!-- JS -->
-  <script src="js/tobii.min.js"></script>
-  <script src="js/jquery.justifiedGallery.min.js"></script>
-  <script>
+<!-- JS -->
+<script src="js/tobii.min.js"></script>
+<script src="js/jquery.justifiedGallery.min.js"></script>
+<script src="js/scrollama.min.js"></script>
+<script>
     function defer(method) {
-       if (window.jQuery) {
+        if (window.jQuery) {
             method();
         } else {
-            setTimeout(function() { defer(method) }, 50);
+            setTimeout(function () { defer(method) }, 50);
         }
-    }   
+    }
+    function handleStepEnter(response) {
+        console.log(response);
+        response.element.classList.add("is-active");
+    }
+    function handleStepExit(response) {
+			console.log(response);
+			response.element.classList.remove("is-active");
+	}
+
     defer(function () {
         // apply Cloudinary resizing to generate lightbox thumbnails
-        var pppCldBase= "https://res.cloudinary.com/dpulivsul/image/upload/";
-        var pppCldBaseLen= pppCldBase.length;
-        $("#jgallery").each(function(){
-            var pppGalWidth= $(this).attr("data-tmb-width");
-            $(this).children('a.lightbox').each(function(){
-                var pppThisSrc= $(this).attr("href");
-                var pppThisTmbSrc= pppCldBase + "w_" + pppGalWidth + ",c_scale/" + pppThisSrc.substring(pppCldBaseLen);
+        var pppCldBase = "https://res.cloudinary.com/dpulivsul/image/upload/";
+        var pppCldBaseLen = pppCldBase.length;
+        $("#jgallery").each(function () {
+            var pppGalWidth = $(this).attr("data-tmb-width");
+            $(this).children('a.lightbox').each(function () {
+                var pppThisSrc = $(this).attr("href");
+                var pppThisTmbSrc = pppCldBase + "w_" + pppGalWidth + ",c_scale/" + pppThisSrc.substring(pppCldBaseLen);
                 $(this).children("img").attr("src", pppThisTmbSrc);
             });
         });
-        const tobii = new Tobii({captions: false});
-        $("#jgallery").justifiedGallery({rowHeight: 240,  margins: 6, captions: false, lastRow:'justify'});
+        const tobii = new Tobii({ captions: false });
+        $("#jgallery").justifiedGallery({ rowHeight: 240, margins: 6, captions: false, lastRow: 'justify' });
+
+        // initialize the scrollama
+		var scroller = scrollama();
+        scroller.setup({
+			step: "#scrolly article .step",
+			offset: 0.33,
+			debug: false
+		});
+        scroller.onStepEnter(handleStepEnter);
+        scroller.onStepExit(handleStepExit);
+
     });
-  </script>
+</script>
 </body>
 </html>
