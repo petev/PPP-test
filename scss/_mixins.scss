@@ -1,0 +1,62 @@
+/* set css screen size for accessibility by scripts */
+@mixin show-css-size () { 
+	#cssSize {
+		text-align:center;
+		&:before {
+			content:"xs" ;
+		}
+		z-index:0 !important;
+		@media (min-width:$screen-small) {
+			z-index:1 !important;
+			&:before {
+				content:"sm" ;
+			}
+		}
+		@media (min-width:$screen-medium) {
+			z-index:2 !important;
+			&:before {
+				content:"md" ;
+			}
+		}
+		@media (min-width:$screen-large) {
+			z-index:3 !important;
+			&:before {
+				content:"lg" ;
+			}
+		}
+	}
+	@if ($sp-debug == false) {
+		#cssSize {
+			display:block; /* hide from users unless debugging */
+			height:0px;
+			padding:0;
+			line-height:0;
+			overflow:hidden;
+		}
+	}
+	@else {
+		#cssSize {
+			padding:10px;
+			background-color:$sp-debug-bg-color;
+			color:$sp-debug-color;
+			border-top-right-radius:6px;
+			border-bottom-right-radius:6px;
+			&:hover {
+				background-color:$sp-debug-bg-color-hover;
+			}
+		}
+	}
+}
+@mixin hide-css-size() {
+	#cssSize:before {
+		content:"" ; 
+	}
+}
+@mixin hide-this() {
+	display:none;
+	visibility:hidden;
+}
+@mixin show-this($display-type: block) {
+	display:$display-type;
+	visibility:visible;
+}

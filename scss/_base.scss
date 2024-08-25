@@ -1,0 +1,31 @@
+// SCSS base file
+// variables
+$sp-debug:false;
+
+/* webflow breakpoints */
+$wfl-tiny-min: 0px; /* webflow tiny: phone portrait 479px and below */
+$wfl-tiny-max: 479px; /* webflow tiny: phone portrait 479px and below */
+$wfl-small-min: 480px; /* webflow small: phone landscape 767px and below */
+$wfl-small-max: 767px; /* webflow small: phone landscape 767px and below */
+$wfl-medium-min: 768px; /* webflow medium: tablet portrait 991px and below */
+$wfl-medium-max: 991px; /* tablet portrait 991px and below */
+$wfl-desk-min: 992px;	/* desktop 992px and above */
+
+$screen-sm-min: $wfl-small-min;
+$screen-md-min: $wfl-medium-min;
+$screen-lg-min: $wfl-desk-min;
+
+/* for _mixins, css-size */
+$screen-small: $wfl-small-min;
+$screen-medium: $wfl-medium-min;
+$screen-large: $wfl-desk-min;
+
+/* base colours */
+$obg-tag-blue: #046da8;
+$obg-tag-blue-border: #379dd6;
+$obg-tag-blue-text: #03236e;
+
+/* debug colours */
+$sp-debug-color: $obg-tag-blue;
+$sp-debug-bg-color: $obg-tag-blue;
+$sp-debug-bg-color-hover: $obg-tag-blue;
